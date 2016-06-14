@@ -20,6 +20,7 @@ WHERE {
   ?recording a <http://dbpedia.org/ontology/Album> .
   ?recording <http://dbpedia.org/property/name> ?title .
   ?recording <http://dbpedia.org/ontology/releaseDate> ?release_date .
+  FILTER ( ?release_date <= xsd:dateTime('1968-01-01T00:00:00Z') )
      } ORDER BY ?release_date "
 
 solutions = sp_end.query(q)
